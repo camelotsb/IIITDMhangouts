@@ -26,6 +26,11 @@ body {
     transition: all 0.5s;
 }
 
+.mode:hover{
+    color: #ff7a59;
+    border: #ff7a59 solid 1px;
+    background:#fff;
+  }
 
 #searchP {
     top:15px;
