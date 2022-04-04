@@ -1,5 +1,4 @@
-import { initializeApp } from 'firebase/app';
-import { getDatabase, ref, set } from "firebase/database";
+
 function init(){
 // Import the functions you need from the SDKs you need
 ;
@@ -20,8 +19,7 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const database = getDatabase(app);
+const app = firebase.initializeApp(firebaseConfig);
 
 
 
@@ -29,11 +27,20 @@ const database = getDatabase(app);
 init()
 
 function writeUserData(userId, name, email, imageUrl) {
+  try {
+    try {
+      const db = firebase.getDatabase();
+    } catch (error) {
+      alert(error.value)
+    }
+      
+      set(ref(db, 'users/' + userId), {
+        username: name,
+        email: email,
+        profile_picture : imageUrl
+      });
+  } catch (error) {
+    alert(error.value)
+  }
 
-    const db = getDatabase();
-    set(ref(db, 'users/' + userId), {
-      username: name,
-      email: email,
-      profile_picture : imageUrl
-    });
   }
