@@ -11,7 +11,7 @@
 <body>
     
    
-    <form action="/action_page.php">
+    <form submit=cliked()>
         <label for="fname">First name:</label>
         <input type="text" id="fname" name="fname"><br><br>
         <label for="lname">Last name:</label>
@@ -71,6 +71,28 @@
         const app = initializeApp(firebaseConfig);
       
         const analytics = getAnalytics(app);
+        firebase.initializeApp(firebaseConfig)
+        let database = firebase.database()
+        function cliked(){
+
+
+          
+          database.ref("customPath").set(obj, function(error) {
+          if (error) {
+            // The write failed...
+            console.log("Failed with error: " + error)
+          } else {
+            // The write was successful...
+            console.log("success")
+          }
+          })
+
+
+          database.ref('customPath').once('value')
+        .then(function(snapshot) {
+            console.log( snapshot.val() )
+        })
+        }
       
       </script>
       
