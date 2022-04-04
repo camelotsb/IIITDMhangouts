@@ -1,0 +1,40 @@
+body {
+    background-color: black;
+}
+#selFrame {
+
+	background-color: black;
+	height: 300px;
+	width: 800px;
+	margin: auto;
+	position: relative;
+	overflow: hidden;
+    top: 150px;
+    right:250px;
+    cursor:  crosshair;
+}
+
+.mode {
+    color: aliceblue;
+    height: 100px;
+    width:800px;
+    transition: color 0.25s ease-out, box-shadow 0.25s ease-out;
+    background-color: rgb(0, 0, 0);    
+    text-align: left;
+    font-size: 50px;
+    cursor:  alias;
+    transition: all 0.5s;
+}
+
+
+#searchP {
+    top:15px;
+    
+   
+}
+#searchL {
+    top:105px;
+}
+#searchA {
+    top:195px;
+}
