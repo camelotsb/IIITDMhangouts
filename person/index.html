@@ -12,10 +12,10 @@
 </head>
 
 <body>
-  <form onsubmit="alert('document.registrationform.name.value')"  id="registrationform">
+  <form onsubmit="alert(document.getElementById('name').value)"  id="registrationform" name="registrationform">
   
     
-    <fieldset>
+    <fieldset name="field" id="field">
       <!-- Section 1 -->
       <legend><span class="section"></span>Search with:</legend>
       <label class="" for="name">Username:</label>
