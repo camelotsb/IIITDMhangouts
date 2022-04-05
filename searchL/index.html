@@ -32,6 +32,7 @@ const firebaseConfig = {
 };
 
 const app = initializeApp(firebaseConfig);
+alert("Searching for people at "+loc.value)
         var dbref = firebase.database().ref().child(loc.value)
         dbref.on('value',handler)
       } catch (error) {
