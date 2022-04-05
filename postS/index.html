@@ -15,6 +15,8 @@
   <script type = "module">
     import { initializeApp } from 'firebase/app';
     import { getDatabase, ref, set } from "firebase/database";
+    try {
+    
     const firebaseConfig = {
   apiKey: "AIzaSyBF_YeGI5gwab62e5lTuGcLspT3bmJM4rM",
   authDomain: "gdsc-storage-5b8ab.firebaseapp.com",
@@ -28,15 +30,15 @@
     function writeUserData(userId, name, email, imageUrl) {
       const app = initializeApp(firebaseConfig);
   const db = getDatabase(app);
-  try {
+  
     set(ref(db, 'users/' + userId), {
     username: name,
     email: email,
     profile_picture : imageUrl
   });
-  } catch (error) {
+  } }catch (error) {
     alert(error.message)
-  }
+  
 }
   </script>
   <form onsubmit="writeUserData(document.getElementById('name').value,'Vibhav','vibhavgopal2004@mgg.com','thus is the url')"  id="registrationform">
