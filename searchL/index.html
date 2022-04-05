@@ -10,9 +10,11 @@
   <script src="https://www.gstatic.com/firebasejs/5.10.0/firebase.js"></script>
   <script src="app.js"></script>
   <script>
+    function handler(){alert("Came here")}
     function sumbit(loc){
-      alert("Finding people at "+loc)
-      var dbref = firebase.database().ref().child()
+      alert("Finding people at "+loc.value)
+      var dbref = firebase.database().ref().child(loc.value)
+      dbref.on('value',handler)
     }
   </script>
 </head>
@@ -39,7 +41,7 @@
       </select>
 
 
-      <button type="submit" onclick="sumbit(document.getElementById('interest').value)">Find</button>
+      <button type="submit" onclick="sumbit(document.getElementById('interest)">Find</button>
   </form>
 
   
