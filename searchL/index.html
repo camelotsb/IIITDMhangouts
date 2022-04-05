@@ -13,8 +13,9 @@
     function handler(){alert("Came here")}
     function sumbit(loc){
       alert("Finding people at "+loc.value)
-      var dbref = firebase.database().ref().child(loc.value)
+      
       try {
+        var dbref = firebase.database().ref().child(loc.value)
         dbref.on('value',handler)
       } catch (error) {
         alert(error.value)
