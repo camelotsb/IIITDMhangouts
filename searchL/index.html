@@ -12,7 +12,6 @@
   <script type="module">
     import { initializeApp } from 'firebase/app';
     import { getDatabase, ref, onValue} from "firebase/database";
-    function handler(){alert("Came here")}
     function sumbit(loc){
       alert("Finding people at "+loc.value)
       
@@ -33,14 +32,14 @@ const firebaseConfig = {
 
 const app = initializeApp(firebaseConfig);
 const db = getDatabase();
-const starCountRef = ref(db, 'posts/' + postId + '/starCount');
+const starCountRef = ref(db, (loc.value+'/') + postId + '/starCount');
 onValue(starCountRef, (snapshot) => {
   const data = snapshot.val();
   updateStarCount(postElement, data);
 });
 alert("Searching for people at "+loc.value)
         var dbref = firebase.database().ref().child(loc.value)
-        dbref.on('value',handler)
+        dbref.on(loc.value,alert,'value')
       } catch (error) {
         alert(error.message)
       }
